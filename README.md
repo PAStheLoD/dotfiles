@@ -3,7 +3,7 @@ Pas' .vimrc, .bashrc, .inputrc, and maybe more!
 === Vim ===
 
 For Vim you should use [Vundle](https://github.com/gmarik/vundle/), and just
-clone it into .vim/bundles. It's sourced from bundles.vim. And then start vim
+clone it into .vim/bundle/. It's sourced from bundles.vim. And then start vim
 and type :BundleInstall and hit enter.
 
 === Bash ===
