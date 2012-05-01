@@ -1,0 +1,7 @@
+/.vim/bundle/*
+!/.vim/bundle/.magic
+
+*~
+*.swp
+
+
