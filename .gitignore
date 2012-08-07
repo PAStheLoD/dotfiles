@@ -1,5 +1,7 @@
 /.vim/bundle/*
 !/.vim/bundle/.magic
+/vimified/bundle/*
+!/vimified/bundle/.magic
 
 *~
 *.swp
