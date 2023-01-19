@@ -1,4 +1,12 @@
-2023-01-19
+2023-01-19 10:50
+  * finger snap ubuntu out of snapping firefox.
+  *  https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04
+  * as user `gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'`
+  * `sudo apt install gnome-shell-extension-manager`
+  * via https://www.omgubuntu.co.uk/2022/04/installed-ubuntu-22-04-do-these-things-next
+
+
+2023-01-19 2:30
   * installed Google Chrome deb
   * set up Seafile
     * one of the synced dirs had some funny characters, Seafile complained but did not inform me of the actual filename(s), then ran `find . -name '*[<>:"/\|?* ]*'` to find it
