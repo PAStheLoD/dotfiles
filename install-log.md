@@ -1,4 +1,9 @@
+2023-01-21
+  * signal ... ah ... the joys of open source. https://github.com/signalapp/Signal-Desktop/issues/2521
+
 2023-01-20
+  * printing with a Brother MFC printer works flawlessly (just click click click from Chrome, find printer, add, blablabla, great)
+  * scanning not so lucky :D I just gave up and took a photo with my phone 😅
   * so gnome is what it is. the Settings "app" ([gnome-control-center](https://gitlab.gnome.org/GNOME/gnome-control-center)) has a nice interface, but it just ... stops working correctly after some usage. how? why? no one knows? it should be stateless. right? it's just dbus and dconf calls and under the hood. [woah, that's a lot of dbus calls.](https://www.reddit.com/r/pcmasterrace/comments/elw7ah/rgb_power/) ([eheh](https://knowyourmeme.com/memes/fortune-teller)).
     * so had to install `pavucontrol` and manually set the output to the bluetooth headphones for Chrome and Firefox.
     * there's also a definitely missing feature that I have to always manually set the microphone input to the bluetooth one.
