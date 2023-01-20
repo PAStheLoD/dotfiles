@@ -1,3 +1,9 @@
+2023-01-20
+  * so gnome is what it is. the Settings "app" ([gnome-control-center](https://gitlab.gnome.org/GNOME/gnome-control-center)) has a nice interface, but it just ... stops working correctly after some usage. how? why? no one knows? it should be stateless. right? it's just dbus and dconf calls and under the hood. [woah, that's a lot of dbus calls.](https://www.reddit.com/r/pcmasterrace/comments/elw7ah/rgb_power/) ([eheh](https://knowyourmeme.com/memes/fortune-teller)).
+    * so had to install `pavucontrol` and manually set the output to the bluetooth headphones for Chrome and Firefox.
+    * there's also a definitely missing feature that I have to always manually set the microphone input to the bluetooth one.
+    * there are of course some open bugs for these: [1](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1580) [2](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/1759) (pipewire wireplumber pipewire-pulse) oh and see this one too about how [pavucontrol works but not the control panel](https://gitlab.gnome.org/GNOME/gnome-control-center/-/issues/2011)
+
 2023-01-19 10:50
   * finger snap ubuntu out of snapping firefox.
   *  https://www.omgubuntu.co.uk/2022/04/how-to-install-firefox-deb-apt-ubuntu-22-04
