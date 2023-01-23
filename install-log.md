@@ -1,3 +1,11 @@
+2023-01-23
+  * oh, full HD webcam, okay. https://github.com/gphoto/libgphoto2/issues/567#issuecomment-740813120
+  * also Signal "minimize to tray" works, but there's no UI option for it https://github.com/signalapp/Signal-Desktop/issues/3877
+
+2023-01-22
+  * StarCraft II runs in 4K almost perfectly. (probably rusty spinning disk is the cause of all the hitches)
+    * lutris! (just installed wine, then Lutris, searched for SC2, click click .. it installs battle.net installer, then it just works)
+
 2023-01-21
   * signal ... ah ... the joys of open source. https://github.com/signalapp/Signal-Desktop/issues/2521
 
