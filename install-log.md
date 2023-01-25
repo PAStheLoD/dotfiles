@@ -1,3 +1,7 @@
+2023-01-25
+  * webcam + udev, yeey :)
+    * see [webcam](webcam/) directory
+
 2023-01-23
   * oh, full HD webcam, okay. https://github.com/gphoto/libgphoto2/issues/567#issuecomment-740813120
   * also Signal "minimize to tray" works, but there's no UI option for it https://github.com/signalapp/Signal-Desktop/issues/3877

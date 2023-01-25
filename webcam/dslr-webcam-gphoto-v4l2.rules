@@ -1,0 +1,53 @@
+## based on https://linuxconfig.org/tutorial-on-how-to-write-basic-udev-rules-in-linux
+
+
+# udev runs "RUN" things as root
+# passes a bunch of env vars, such as
+#
+#
+#
+# TAGS=:seat:uaccess:
+# ID_MODEL=Canon_Digital_Camera
+# ID_REVISION=0002
+# ID_SERIAL=Canon_Inc._Canon_Digital_Camera
+# ID_FOR_SEAT=usb-pci-0000_01_00_0-usb-0_1_2
+# ID_BUS=usb
+# ID_PATH=pci-0000:01:00.0-usb-0:1.2
+# TYPE=0/0/0
+# PWD=/
+# SEQNUM=18270
+# ID_MODEL_ID=32d2
+# ID_VENDOR_ENC=Canon\x20Inc.
+# GPHOTO2_DRIVER=PTP
+# DEVPATH=/devices/pci0000:00/0000:00:01.3/0000:01:00.0/usb1/1-1/1-1.2
+# USEC_INITIALIZED=397144998738
+# ID_VENDOR_ID=04a9
+# COLORD_DEVICE=1
+# SUBSYSTEM=usb
+# DEVNUM=040
+# ID_USB_INTERFACES=:060101:
+# COLORD_KIND=camera
+# MINOR=39
+# ID_GPHOTO2=1
+# ID_VENDOR_FROM_DATABASE=Canon, Inc.
+# ID_MODEL_ENC=Canon\x20Digital\x20Camera
+# ID_PATH_TAG=pci-0000_01_00_0-usb-0_1_2
+# PRODUCT=4a9/32d2/2
+# CURRENT_TAGS=:seat:uaccess:
+# SHLVL=1
+# DRIVER=usb
+# DEVTYPE=usb_device
+# ID_MODEL_FROM_DATABASE=EOS M50
+# ID_VENDOR=Canon_Inc.
+# BUSNUM=001
+# MAJOR=189
+# DEVNAME=/dev/bus/usb/001/040
+# ACTION=add
+# _=/usr/bin/env
+
+
+
+ACTION=="add" \
+, ATTRS{idProduct}=="32d2" \
+, ATTRS{idVendor}=="04a9" \
+, RUN+="/bin/bash /home/pas/Desktop/webcam/start-gphoto2-ffmpeg.bash"
