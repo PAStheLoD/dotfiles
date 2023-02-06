@@ -1,3 +1,9 @@
+2023-02-06
+  * things for .bashrc: `export PS4='$0.$LINENO+ '`
+    * so every time a script runs with `-x` (or `-o trace`) instead of the `+` we get a nice filename + linenumber. neat! ([source](https://theleo.zone/posts/linux-upskill/)) 
+  * also, good to know, [sshpass](https://serverfault.com/a/512220/6619) (because no one has time for `expect`)
+  * also also, I want to explore alternatives for Hetzner's Storage thing .. so I paid 7EUR for a VM at DeinServerHost.de, then promptly forgot the root password, then tried metasploit to recover it :) ... but no luck with `post/multi/recon/local_exploit_suggestor` :(
+
 2023-01-25
   * webcam + udev, yeey :)
     * see [webcam](webcam/) directory
