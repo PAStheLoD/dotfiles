@@ -1,3 +1,192 @@
+2023-10-28
+
+  * ASUS STRIX ROG B450-F GAMING motherboard, USB layout .. interestingly the 10G bus is not on the backside :o
+
+  * kernel version Linux 6.5.0-10-generic #10-Ubuntu SMP PREEMPT_DYNAMIC Fri Oct 13 13:49:38 UTC 2023 x86_64 x86_64 x86_64 GNU/Linux
+
+    the Logitech Brio works with ffplay /dev/video0 (is this a defeat of the "fancy SLR as webcam" project? so-so, at least the Canon EOS M50 Mark I is no bueno, because after 30m it needs a touch .. at least on Linux :D)
+
+    I'm pasting the usb tree, because in a different setup the whole thing burnt down (half the ports stopped ... strange errors like `Failed to query (GET_INFO) UVC control 7 on unit 3: -110 (exp. 1)` (110 is timeout), `usb 2-2: UVC non compliance - GET_DEF(PROBE) not supported. Enabling workaround.`, though I'm still getting errors like `kwin_libinput: Libinput: event5  - Logitech G502 HERO Gaming Mouse: client bug: event processing lagging behind by 38ms, your system is too slow`, ... I disabled something something USB legacy whatever in the BIOS, might have helped ... others also mentioned that the USB 3.1 port didn't work, but the 3.0 did)
+
+    ```    
+    usb 2-2: Found UVC 1.00 device Logi 4K Stream Edition (046d:086b)
+    uvcvideo 2-2:1.2: Failed to set UVC probe control : -110 (exp. 26).
+    usb 2-2: Failed to query (GET_CUR) UVC control 13 on unit 1: -110 (exp. 8).
+    ```
+
+    now it works without UVC errors ...
+
+    ```
+    usb 4-3: Found UVC 1.00 device Logi 4K Stream Edition (046d:086b)
+    usb 4-1: Found UVC 1.00 device Logi 4K Stream Edition (046d:086b)
+    ```
+
+    
+
+    https://webcamtests.com/ detects two of it, which is interesting, but at least it works well in 1920x1080 30fps.
+    
+
+    ```
+    # v4l2-compliance 
+    v4l2-compliance 1.24.1, 64 bits, 64-bit time_t
+    
+    Compliance test for uvcvideo device /dev/video0:
+    
+    Driver Info:
+            Driver name      : uvcvideo
+            Card type        : Logi 4K Stream Edition
+            Bus info         : usb-0000:0b:00.3-3
+            Driver version   : 6.5.3
+            Capabilities     : 0x84a00001
+                    Video Capture
+                    Metadata Capture
+                    Streaming
+                    Extended Pix Format
+                    Device Capabilities
+            Device Caps      : 0x04200001
+                    Video Capture
+                    Streaming
+                    Extended Pix Format
+    Media Driver Info:
+            Driver name      : uvcvideo
+            Model            : Logi 4K Stream Edition
+            Serial           : 165FB720
+            Bus info         : usb-0000:0b:00.3-3
+            Media version    : 6.5.3
+            Hardware revision: 0x00000317 (791)
+            Driver version   : 6.5.3
+    Interface Info:
+            ID               : 0x03000002
+            Type             : V4L Video
+    Entity Info:
+            ID               : 0x00000001 (1)
+            Name             : Logi 4K Stream Edition
+            Function         : V4L2 I/O
+            Flags            : default
+            Pad 0x0100000d   : 0: Sink
+              Link 0x02000029: from remote pad 0x1000010 of entity 'Processing 3' (Video Pixel Formatter): Data, Enabled, Immutable
+    
+    Required ioctls:
+            test MC information (see 'Media Driver Info' above): OK
+            test VIDIOC_QUERYCAP: OK
+            test invalid ioctls: OK
+    
+    Allow for multiple opens:
+            test second /dev/video0 open: OK
+            test VIDIOC_QUERYCAP: OK
+            test VIDIOC_G/S_PRIORITY: OK
+            test for unlimited opens: OK
+    
+    Debug ioctls:
+            test VIDIOC_DBG_G/S_REGISTER: OK (Not Supported)
+            test VIDIOC_LOG_STATUS: OK (Not Supported)
+    
+    Input ioctls:
+            test VIDIOC_G/S_TUNER/ENUM_FREQ_BANDS: OK (Not Supported)
+            test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+            test VIDIOC_S_HW_FREQ_SEEK: OK (Not Supported)
+            test VIDIOC_ENUMAUDIO: OK (Not Supported)
+            test VIDIOC_G/S/ENUMINPUT: OK
+            test VIDIOC_G/S_AUDIO: OK (Not Supported)
+            Inputs: 1 Audio Inputs: 0 Tuners: 0
+    
+    Output ioctls:
+            test VIDIOC_G/S_MODULATOR: OK (Not Supported)
+            test VIDIOC_G/S_FREQUENCY: OK (Not Supported)
+            test VIDIOC_ENUMAUDOUT: OK (Not Supported)
+            test VIDIOC_G/S/ENUMOUTPUT: OK (Not Supported)
+            test VIDIOC_G/S_AUDOUT: OK (Not Supported)
+            Outputs: 0 Audio Outputs: 0 Modulators: 0
+    
+    Input/Output configuration ioctls:
+            test VIDIOC_ENUM/G/S/QUERY_STD: OK (Not Supported)
+            test VIDIOC_ENUM/G/S/QUERY_DV_TIMINGS: OK (Not Supported)
+            test VIDIOC_DV_TIMINGS_CAP: OK (Not Supported)
+            test VIDIOC_G/S_EDID: OK (Not Supported)
+    
+    Control ioctls (Input 0):
+                    fail: v4l2-test-controls.cpp(206): no V4L2_CID_PRIVATE_BASE allowed
+            test VIDIOC_QUERY_EXT_CTRL/QUERYMENU: FAIL
+                    fail: v4l2-test-controls.cpp(352): node->controls.find(qctrl.id) == node->controls.end()
+            test VIDIOC_QUERYCTRL: FAIL
+            test VIDIOC_G/S_CTRL: OK
+            test VIDIOC_G/S/TRY_EXT_CTRLS: OK
+            test VIDIOC_(UN)SUBSCRIBE_EVENT/DQEVENT: OK
+            test VIDIOC_G/S_JPEGCOMP: OK (Not Supported)
+            Standard Controls: 19 Private Controls: 0
+    
+    Format ioctls (Input 0):
+            test VIDIOC_ENUM_FMT/FRAMESIZES/FRAMEINTERVALS: OK
+            test VIDIOC_G/S_PARM: OK
+            test VIDIOC_G_FBUF: OK (Not Supported)
+            test VIDIOC_G_FMT: OK
+            test VIDIOC_TRY_FMT: OK
+                    warn: v4l2-test-formats.cpp(1046): Could not set fmt2
+            test VIDIOC_S_FMT: OK
+            test VIDIOC_G_SLICED_VBI_CAP: OK (Not Supported)
+            test Cropping: OK (Not Supported)
+            test Composing: OK (Not Supported)
+            test Scaling: OK (Not Supported)
+    
+    Codec ioctls (Input 0):
+            test VIDIOC_(TRY_)ENCODER_CMD: OK (Not Supported)
+            test VIDIOC_G_ENC_INDEX: OK (Not Supported)
+            test VIDIOC_(TRY_)DECODER_CMD: OK (Not Supported)
+    
+    Buffer ioctls (Input 0):
+            test VIDIOC_REQBUFS/CREATE_BUFS/QUERYBUF: OK
+            test VIDIOC_EXPBUF: OK
+            test Requests: OK (Not Supported)
+    
+    Total for uvcvideo device /dev/video0: 46, Succeeded: 44, Failed: 2, Warnings: 1
+    ```
+    
+    ```
+    #  lsusb -v -t
+    /:  Bus 04.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 5000M
+        ID 1d6b:0003 Linux Foundation 3.0 root hub
+        |__ Port 3: Dev 2, If 0, Class=Video, Driver=uvcvideo, 5000M
+            ID 046d:086b Logitech, Inc. BRIO 4K Stream Edition
+        |__ Port 3: Dev 2, If 1, Class=Video, Driver=uvcvideo, 5000M
+            ID 046d:086b Logitech, Inc. BRIO 4K Stream Edition
+        |__ Port 3: Dev 2, If 2, Class=Video, Driver=uvcvideo, 5000M
+            ID 046d:086b Logitech, Inc. BRIO 4K Stream Edition
+        |__ Port 3: Dev 2, If 3, Class=Audio, Driver=snd-usb-audio, 5000M
+            ID 046d:086b Logitech, Inc. BRIO 4K Stream Edition
+        |__ Port 3: Dev 2, If 4, Class=Audio, Driver=snd-usb-audio, 5000M
+            ID 046d:086b Logitech, Inc. BRIO 4K Stream Edition
+        |__ Port 3: Dev 2, If 5, Class=Human Interface Device, Driver=usbhid, 5000M
+            ID 046d:086b Logitech, Inc. BRIO 4K Stream Edition
+    /:  Bus 03.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 480M
+        ID 1d6b:0002 Linux Foundation 2.0 root hub
+        |__ Port 1: Dev 4, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+            ID 096e:085a Feitian Technologies, Inc. 
+        |__ Port 2: Dev 2, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+            ID 046d:c33a Logitech, Inc. G413 Gaming Keyboard
+        |__ Port 2: Dev 2, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+            ID 046d:c33a Logitech, Inc. G413 Gaming Keyboard
+    /:  Bus 02.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/4p, 10000M
+        ID 1d6b:0003 Linux Foundation 3.0 root hub
+    /:  Bus 01.Port 1: Dev 1, Class=root_hub, Driver=xhci_hcd/10p, 480M
+        ID 1d6b:0002 Linux Foundation 2.0 root hub
+        |__ Port 1: Dev 2, If 0, Class=Wireless, Driver=btusb, 12M
+            ID 0a12:0001 Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
+        |__ Port 1: Dev 2, If 1, Class=Wireless, Driver=btusb, 12M
+            ID 0a12:0001 Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
+        |__ Port 2: Dev 3, If 0, Class=Vendor Specific Class, Driver=rtw_8822bu, 480M
+            ID 0b05:19aa ASUSTek Computer, Inc. 
+        |__ Port 5: Dev 4, If 0, Class=Human Interface Device, Driver=usbhid, 12M
+            ID 046d:c08b Logitech, Inc. G502 SE HERO Gaming Mouse
+        |__ Port 5: Dev 4, If 1, Class=Human Interface Device, Driver=usbhid, 12M
+            ID 046d:c08b Logitech, Inc. G502 SE HERO Gaming Mouse
+        |__ Port 6: Dev 5, If 0, Class=Audio, Driver=snd-usb-audio, 12M
+            ID 145f:02d9 Trust 
+        |__ Port 6: Dev 5, If 1, Class=Audio, Driver=snd-usb-audio, 12M
+            ID 145f:02d9 Trust 
+        |__ Port 6: Dev 5, If 2, Class=Human Interface Device, Driver=usbhid, 12M
+            ID 145f:02d9 Trust 
+    ```
+
 2023-02-06
   * things for .bashrc: `export PS4='$0.$LINENO+ '`
     * so every time a script runs with `-x` (or `-o trace`) instead of the `+` we get a nice filename + linenumber. neat! ([source](https://theleo.zone/posts/linux-upskill/)) 
