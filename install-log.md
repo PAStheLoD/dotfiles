@@ -1,3 +1,111 @@
+2024-01-27
+ 
+
+  ```
+  C:\> scoop list
+  Installed apps:
+  
+  Name                      Version         Source           Updated             Info
+  ----                      -------         ------           -------             ----
+  7zip                      23.01           main             2023-11-15 23:39:08
+  autohotkey                2.0.11          extras           2023-12-23 17:18:08
+
+  # diff tool
+  beyondcompare             4.4.7.28397     extras           2023-11-29 01:42:50
+
+  # this is probably to get dig
+  bind                      9.16.45         main             2023-11-16 15:36:38
+
+  capture2text              4.6.3           extras           2022-03-23 11:50:56
+  cascadia-code-pl          2111.01         sushi            2022-11-12 15:20:41
+
+  # ah, this was for proxying mongodb I think at a project a few years ago, TCP tunnel over HTTP ... https://github.com/jpillora/chisel
+  chisel                    1.9.1           main             2023-11-15 23:39:22
+
+  cmake                     3.28.1          main             2023-12-21 16:01:45
+
+  # php package manager
+  composer                  2.6.6           main             2023-12-10 02:43:43
+  coretemp                  1.18.1          extras           2023-11-15 23:39:45
+  cpu-z                     2.09            extras           2024-01-26 15:32:45
+
+  # windows installer XML decompiler :o
+  dark                      3.11.2          main             2019-12-13 12:23:31
+  dbeaver                   23.3.3          extras           2024-01-26 15:32:56
+  deno                      1.40.2          main             2024-01-27 15:03:48
+
+  # installer image to USB copier
+  etcher                    1.18.11         extras           2023-11-15 23:40:29
+
+  ffmpeg                    6.1.1           main             2024-01-26 15:33:16
+  filezilla                 3.66.4          extras           2023-12-21 16:01:57
+
+  # hm, I just use the built-in Windows one, I think
+  flameshot                 12.1.0          extras           2023-01-05 01:18:51
+
+  # ah, a blast from the past! I don't even listen to offline music on this PC :(
+  foobar2000                2.1.1           extras           2024-01-26 15:33:18
+
+  # wow. never used it I guess
+  freecommander             2024.900        extras           2023-12-21 16:02:15
+  git                       2.43.0          main             2023-11-28 10:44:25
+  innounp                   0.50            main             2020-12-30 03:21:22
+  irfanview                 4.66            extras           2023-12-21 16:02:18
+  jmeter                    5.6.3           extras           2024-01-26 15:33:47
+  jq                        1.7.1           main             2023-12-14 00:56:36
+
+  # stopped using keepass, switched to keepassXC
+  keepass                   2.55            extras           2023-11-15 23:44:21
+  keepass-plugin-keepassrpc 1.16.0          extras           2024-01-26 15:33:48
+
+  keepassxc                 2.7.6           extras           2023-11-15 14:42:28
+  lessmsi                   1.10.0          main             2021-11-30 00:54:40
+  librehardwaremonitor      0.9.3           extras           2024-01-26 15:36:38
+  naps2                     7.3.0           extras           2024-01-26 15:33:52
+  nasm                      2.16.01         main             2022-12-23 17:01:16
+  nmap-portable             7.92            main             2021-08-30 00:37:36
+  nodejs                    21.6.1          main             2024-01-26 15:34:03
+  openjdk18                 18.0.2.1-1      java             2022-09-03 19:32:15
+  openssh                   9.5.0.0p1       main             2023-12-21 16:04:19
+  posh-git                  1.1.0           extras           2022-04-02 19:35:35
+
+  # sometimes that H.265 file seems to be dropping frames in VLC, but not in this
+  potplayer                 231220          extras           2023-12-21 16:02:45
+  powershell                7.4.1           dorado           2024-01-26 15:36:52
+  powershell-preview        7.5.0-preview.1 dorado           2024-01-26 15:34:22
+  process-explorer          17.05           dorado           2023-11-15 23:44:50
+  process-monitor           3.96            dorado           2023-11-15 23:44:50
+  putty                     0.80            extras           2023-12-21 16:02:47
+  python                    3.12.1          main             2023-12-10 02:44:31
+  python27                  2.7.18          versions         2020-04-24 15:15:12
+  qbittorrent-enhanced      4.6.3.10        extras           2024-01-26 15:34:28
+
+  # mongoDB GUI thingie
+  robo3t                    1.4.4           extras           2021-11-05 18:56:34
+
+  scoop-completion          0.2.3           scoop-completion 2020-10-14 17:49:35
+  seafile-syncing-client    9.0.4           extras           2023-11-15 23:31:36
+  shellcheck                0.9.0           main             2022-12-23 17:02:01
+  sudo                      0.2020.01.26    main             2020-02-02 16:07:06
+  sumatrapdf                3.5.2           extras           2023-11-29 01:43:17
+  teamviewer                15.50.5         extras           2024-01-26 15:34:34
+
+  # yes, so, you see the server part comes in handy, because sometimes something crashes in this PC and the screens go blank (despite switching to a new GPU last month), and ... well, I don't want to climb and hold the power button for a few seconds... also I'm curious can I somehow restart the GPU? :D
+  tightvnc                  2.8.81          extras           2024-01-27 14:42:05
+
+  unzip                     6.00            main             2020-12-11 14:38:21
+  vcredist2019              14.28.29914.0   extras           2021-05-25 12:10:56
+  visualvm                  2.1.5           mcofficer        2022-10-28 10:44:07
+  vlc                       3.0.20          extras           2023-11-15 23:45:35
+  windirstat                1.1.2           extras           2021-03-30 00:57:43
+  windows-terminal          1.18.3181.0     extras           2023-11-17 15:22:21
+  winscp                    6.1.2           extras           2023-11-15 23:45:39
+  wireshark                 4.2.2           extras           2024-01-26 15:34:42
+  yt-dlp                    2023.12.30      main             2024-01-26 15:34:43
+  
+  ```
+
+
 2023-10-28
 
   * ASUS STRIX ROG B450-F GAMING motherboard, USB layout .. interestingly the 10G bus is not on the backside :o
