@@ -1,4 +1,35 @@
 2024-01-27
+
+
+  ```
+  $ brew list
+  
+  ==> Casks
+  # charge limiter, battery life extender
+  aldente
+
+  android-studio
+  dbeaver-community
+
+  # winscp alternative, SFTP, WebDAV, etc.. but it's 20 bucks, hm. just use a CLI 
+  forklift
+
+  # text editor
+  lapce
+
+
+  vlc
+
+  # xbar good. you can put widgets there. well, not that I put anything there
+  # that I actually use, but still. goodish. there's a widget for limaVM status.
+  xbar
+
+
+  # text editor(s)
+  xournal-plus-plus
+  zed
+
+  ```
  
 
   ```
